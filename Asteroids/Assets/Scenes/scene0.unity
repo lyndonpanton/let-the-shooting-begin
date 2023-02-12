@@ -272,7 +272,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1879896511}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -343,6 +343,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd5196a64391c041bf9e395491d83e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabBullet: {fileID: 4374547359323218662, guid: 2a886977ec3bc4c4cbcad25961b4f34f,
+    type: 3}
 --- !u!50 &1879896515
 Rigidbody2D:
   serializedVersion: 4

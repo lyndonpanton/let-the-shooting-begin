@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 /// <summary>
@@ -12,6 +13,10 @@ public class Ship : MonoBehaviour
     Vector2 thrustDirection = new Vector2(1, 0);
     const float ThrustForce = 10;
     const float RotateDegreesPerSecond = 180;
+
+    // bullet support
+    [SerializeField]
+    GameObject prefabBullet;
 
     /// <summary>
     /// Start is called before the first frame update
@@ -42,6 +47,13 @@ public class Ship : MonoBehaviour
             float zRotation = transform.eulerAngles.z * Mathf.Deg2Rad;
             thrustDirection.x = Mathf.Cos(zRotation);
             thrustDirection.y = Mathf.Sin(zRotation);
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            GameObject bullet = Instantiate(prefabBullet) as GameObject;
+
+            bullet.transform.position = gameObject.transform.position;
         }
 	}
 
