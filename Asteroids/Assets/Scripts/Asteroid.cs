@@ -67,8 +67,8 @@ public class Asteroid : MonoBehaviour
         }
 
         // apply impulse force to get asteroid moving
-        const float MinImpulseForce = 3f;
-        const float MaxImpulseForce = 5f;
+        const float MinImpulseForce = 2f;
+        const float MaxImpulseForce = 3.5f;
         Vector2 moveDirection = new Vector2(
             Mathf.Cos(angle), Mathf.Sin(angle));
         float magnitude = Random.Range(MinImpulseForce, MaxImpulseForce);
