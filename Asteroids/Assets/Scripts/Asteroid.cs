@@ -76,4 +76,13 @@ public class Asteroid : MonoBehaviour
             moveDirection * magnitude,
             ForceMode2D.Impulse);
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            Destroy(gameObject);
+            Destroy(collision.gameObject);
+        }
+    }
 }
