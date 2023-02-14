@@ -43,7 +43,7 @@ public class Ship : MonoBehaviour
             }
             transform.Rotate(Vector3.forward, rotationAmount);
 
-            // change thrust direction to match ship rotation
+            // change thrust disrection to match ship rotation
             float zRotation = transform.eulerAngles.z * Mathf.Deg2Rad;
             thrustDirection.x = Mathf.Cos(zRotation);
             thrustDirection.y = Mathf.Sin(zRotation);
@@ -51,9 +51,11 @@ public class Ship : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            GameObject bullet = Instantiate(prefabBullet) as GameObject;
-
+            GameObject bullet = Instantiate(prefabBullet);
             bullet.transform.position = gameObject.transform.position;
+
+            Bullet bulletScript = bullet.GetComponent<Bullet>();
+            bulletScript.ApplyForce(thrustDirection);
         }
 	}
 
