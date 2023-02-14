@@ -49,7 +49,8 @@ public class Ship : MonoBehaviour
             thrustDirection.y = Mathf.Sin(zRotation);
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        //if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             GameObject bullet = Instantiate(prefabBullet);
             bullet.transform.position = gameObject.transform.position;
